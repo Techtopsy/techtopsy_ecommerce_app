@@ -6,9 +6,9 @@ import '../constants/colors.dart';
 import '../helpers/helper_functions.dart';
 
 class TLoaders {
-  static hideSnackBar() => ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
+  static dynamic hideSnackBar() => ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
 
-  static customToast({required message}) {
+  static dynamic customToast({required dynamic message}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         elevation: 0,
@@ -27,7 +27,7 @@ class TLoaders {
     );
   }
 
-  static successSnackBar({required title, message = '', duration = 3}) {
+  static dynamic successSnackBar({required dynamic title, message = '', duration = 3}) {
     Get.snackbar(
       title,
       message,
@@ -42,7 +42,7 @@ class TLoaders {
     );
   }
 
-  static warningSnackBar({required title, message = ''}) {
+  static dynamic warningSnackBar({required dynamic title, message = ''}) {
     Get.snackbar(
       title,
       message,
@@ -57,7 +57,7 @@ class TLoaders {
     );
   }
 
-  static errorSnackBar({required title, message = ''}) {
+  static dynamic errorSnackBar({required dynamic title, message = ''}) {
     Get.snackbar(
       title,
       message,

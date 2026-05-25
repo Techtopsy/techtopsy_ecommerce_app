@@ -19,8 +19,8 @@ class OnBoardingPage extends StatelessWidget {
         children: [
           Expanded(
             child: Image(
-              width: THelperFunctions.screenWidth() * 0.8,
-              height: THelperFunctions.screenHeight() * 0.6,
+              width: THelperFunctions.screenWidth(context) * 0.8,
+              height: THelperFunctions.screenHeight(context) * 0.6,
               image: const AssetImage(TImages.onBoardingImage1),
             ),
           ),
