@@ -26,10 +26,10 @@ class OnBoardingController extends GetxController {
     pageController.jumpToPage(page);
   }
 
+  }
   /// Update Current Index & jump to the last Page
   void skipPage() {
      currentPageIndex.value = 2;
     pageController.jumpToPage(2);
   }
-}
 }

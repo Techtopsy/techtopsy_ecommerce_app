@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/shop/screens/home/widgets/home.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +19,11 @@ class NavigationMenu extends StatelessWidget {
         () => NavigationBar(
           height: 80,
           elevation: 0,
-          selectedIndex: 0,
+          selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) => controller.selectedIndex.value =index,
           backgroundColor: darkMode ? TColors.black: Colors.white,
+          indicatorColor: darkMode ? TColors.white.withOpacity(0.1) : Colors.black.withOpacity(0.1),
+
           destinations: [
             NavigationDestination(icon: Icon(Iconsax.home), label: "Home",),
             NavigationDestination(icon: Icon(Iconsax.shop), label: "Store",),
@@ -29,7 +32,8 @@ class NavigationMenu extends StatelessWidget {
           ],
         ),
       ),
-      body: controller.screens[controller.selectedIndex.value],
+      body: Obx(() =>
+      controller.screens[controller.selectedIndex.value]),
     );
   }
 }
@@ -39,5 +43,5 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [Container(color: Colors.green,),Container(color: Colors.purple,), Container(color: Colors.orange,), Container(color: Colors.blue,),];
+  final screens = [const HomeScreen(), StoreScreen(), Container(color: Colors.orange,), Container(color: Colors.blue,),];
 }
