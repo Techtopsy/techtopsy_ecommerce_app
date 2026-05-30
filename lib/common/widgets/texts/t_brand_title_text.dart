@@ -31,9 +31,7 @@ class TBrandTitleText extends StatelessWidget {
           ? Theme.of(context).textTheme.labelMedium!.apply(color: color)
           : brandTextSize == TextSizes.medium
               ? Theme.of(context).textTheme.bodyLarge!.apply(color: color)
-              : brandTextSize == TextSizes.large
-                  ? Theme.of(context).textTheme.titleLarge!.apply(color: color)
-                  : Theme.of(context).textTheme!.apply(color: color),
+                  : Theme.of(context).textTheme.titleLarge!.apply(color: color),
     );
   }
 }
